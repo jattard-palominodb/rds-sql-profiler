@@ -37,3 +37,6 @@ $digest --create-review-table --create-review-history-table --no-report --review
 
 # same as above but send email
 $digest --review h=$review_host,u=$review_user,p=$review_password,D=$review_schema,t=profiler_queries_$review_server --review-history D=$review_schema,t=sql_profiler_histories_$review_server $slow_log/$review_server.log | mail -s "SQLProfiler report for $review_server" $email_to
+
+# rotate logs
+mysql -u$user -p$password -h$host -e "CALL mysql.rds_rotate_slow_log"
