@@ -21,7 +21,7 @@
 profiler_config=$1
 . $profiler_config
 
-email_to="BeachheadNoc@activision.com, dba_drivedev@palominodb.com, jattard@palominodb.com, support_drivedev@palominodb.com"
+email_to="jattard@palominodb.com"
 review_server=`echo $host | awk -F"." '{print $1}'`
 digest=pt-query-digest
 slow_log=/mnt/slowlogs/
