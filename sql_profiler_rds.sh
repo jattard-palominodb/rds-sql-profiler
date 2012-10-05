@@ -28,7 +28,7 @@ slow_log=/mnt/slowlogs/
 # download slow log
 mysql --quick -u$user -p$password -h$host -D mysql -s -r -e "SELECT CONCAT( '# Time: ', DATE_FORMAT(start_time, '%y%m%d %H%i%s'), '\n', '# User@Host: ', user_host, '\n', '# Query_time: ', TIME_TO_SEC(query_time), ' Lock_time: ', TIME_TO_SEC(lock_time), ' Rows_sent: ', rows_sent, ' Rows_examined: ', rows_examined, '\n', sql_text, ';' ) FROM mysql.slow_log" > $slow_log/$review_server.log
 
-# marked old entries as reviewed
+# mark old entries as reviewed
 mysql -u$review_user -p$review_password -h$review_host -D$review_schema -e "update profiler-queries-$review_server set reviewed_by='palomino' where reviewed_by is null;"
 
 # review and report new top N entries
