@@ -1,22 +1,21 @@
-#SQL Profiler for RDS
-#PalominoDB 2012
+# SQL Profiler for RDS
+# PalominoDB 2012
+# Author: James Attard [jattard@palominodb.com]
+# File: sql_profiler_rds.sh
+# Usage: sql_profiler_rds.sh <config file>
 
-#Usage: sql_profiler_rds.sh <config file>
+# Sample config file:
+# ===================
+# database to be reviewed:
+# user=user1
+# password=DELETED
+# host=live-db.xxxxxxxxx.us-east-1.rds.amazonaws.com
 
-#Sample config file:
-#===================
-#database to be reviewed:
-#.......................
-#user=user1
-#password=DELETED
-#host=live-db.xxxxxxxxx.us-east-1.rds.amazonaws.com
-
-#database holding review information:
-#...................................
-#review_user=user2
-#review_password=DELETED
-#review_host=review-db.xxxxxxxxxx.us-east-1.rds.amazonaws.com
-#review_schema=palomino
+# database holding review information:
+# review_user=user2
+# review_password=DELETED
+# review_host=review-db.xxxxxxxxxx.us-east-1.rds.amazonaws.com
+# review_schema=palomino
 
 profiler_config=$1
 . $profiler_config
